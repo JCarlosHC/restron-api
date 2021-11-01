@@ -1,0 +1,31 @@
+###
+GET http://localhost:3000/api/reservation HTTP/1.1
+###
+GET http://localhost:3000/api/reservation?page=0&size=4&code=A00003 HTTP/1.1
+###
+GET http://localhost:3000/api/reservation/find/A00000 HTTP/1.1
+###
+POST http://localhost:3000/api/reservation/make HTTP/1.1
+content-type: application/json
+
+{
+    "code": "A00003",
+    "detailReservation": {
+        "numberPersons": 2,
+        "date": "31/10/2021",
+        "time": "09:00",
+        "codeTable": "M001",
+        "zone": "Terraza"
+    },
+    "detailPayment": {
+        "cardType": "VISA",
+        "cardNumber": "1234567890123456"
+    },
+    "personalInformation": {
+        "name": "JUAN CARLOS",
+        "paternalName": "HERNÁNDEZ",
+        "maternalName": "",
+        "phoneNumber": "5513548110",
+        "email": "carlos@gmail.com"
+    }
+}
